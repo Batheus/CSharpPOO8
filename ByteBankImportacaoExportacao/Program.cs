@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.IO; // IO = Input e Output
-
+using System.Globalization;
 
 namespace ByteBankImportacaoExportacao
 {
@@ -14,21 +14,12 @@ namespace ByteBankImportacaoExportacao
     {
         static void Main(string[] args)
         {
-            var enderecoDoArquivo = "contas.txt";
 
-            // Códigos dentro do bloco using para acionar a diretiva IDisposable
-            using (var fluxoDeArquivo = new FileStream(enderecoDoArquivo, FileMode.Open))
-            using (var leitor = new StreamReader(fluxoDeArquivo))
-            {
-                while (!leitor.EndOfStream)
-                {
-                    var linha = leitor.ReadLine();
-                    Console.WriteLine(linha);
-                }
-            }
+            CriarArquivoComWriter();
+            Console.WriteLine("Aplicação finalizada. . .");
+
 
             Console.ReadLine();
         }
-
     }
 }

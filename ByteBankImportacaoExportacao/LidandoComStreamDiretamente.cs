@@ -28,6 +28,7 @@ namespace ByteBankImportacaoExportacao
                 }
             }
         }
+
         static void EscreverBuffer(byte[] buffer, int bytesLidos)
         {
             var utf8 = Encoding.Default;
